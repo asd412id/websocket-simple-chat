@@ -18,6 +18,10 @@ var $send = $("#send");
 var $user_id = $("#user_id");
 var $msg = $("#msg");
 
+$user_id.on('change',function(){
+  $msg.focus();
+})
+
 var socket = io();
 
 var yourID;
