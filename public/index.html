@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RealTime Message</title>
+    <style media="screen">
+      .user-status{
+        font-size: 0.7em;
+        color: rgba(0,0,0,.5);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h3 id="username"></h3>
+
+    <div id="notification">
+      <div>
+        <select id="user_id">
+          <option value="">Semua User</option>
+        </select>
+      </div>
+      <input id="msg" placeholder="Kirim Pesan" style="width: 70%;margin-top: 15px" autofocus>
+      <button type="button" style="width: 25%" id="send">Kirim</button>
+      <div style="margin-top: 15px;border: solid 1px;width: 100%;height: 200px; overflow: auto">
+        <div id="notif" style="padding: 15px"></div>
+      </div>
+    </div>
+
+  </body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/socket.io.js"></script>
+  <script src="js/scripts.js"></script>
+</html>
