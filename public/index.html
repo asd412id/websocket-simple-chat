@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>RealTime Message</title>
     <style media="screen">
+      html,body{
+        font-family: Arial
+      }
       .user-status{
         font-size: 0.7em;
         color: rgba(0,0,0,.5);
@@ -12,9 +15,8 @@
     </style>
   </head>
   <body>
-
+    <h3>Status Server: <span id="status"></span></h3>
     <h3 id="username"></h3>
-
     <div id="notification">
       <div>
         <select id="user_id">

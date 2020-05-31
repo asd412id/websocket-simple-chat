@@ -25,6 +25,7 @@ $user_id.on('change',function(){
 var socket = io();
 
 var yourID;
+var userName = null;
 
 var userNotif = '<audio src="sounds/user.mp3" style="display: none" id="userNotif"></audio>';
 var msgNotif = '<audio src="sounds/msg.mp3" style="display: none" id="msgNotif"></audio>';
@@ -61,10 +62,15 @@ $msg.on('keyup',function(e){
 })
 
 socket.on('connect',(data)=>{
-  var name = yourName();
-  if (name!='') {
-    socket.emit('changeID', name);
+  if (userName==null) {
+    userName = yourName();
   }
+  socket.emit('changeID', userName);
+  $server_status.html('<span style="color: green;font-size: 0.8em">Terhubung!</span>');
+});
+
+socket.on('disconnect',(data)=>{
+  $server_status.html('<span style="color: red;font-size: 0.8em">Tidak Terhubung!</span>');
 });
 
 socket.on('user_join',(data)=>{
